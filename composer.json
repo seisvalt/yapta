@@ -15,7 +15,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.1.0",
-        "yiisoft/yii2": "~2.0.15.1",
+        "yiisoft/yii2": "~2.0.21",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "dmstr/yii2-adminlte-asset": "^2.4",
@@ -32,7 +32,10 @@
         "kartik-v/yii2-field-range": "*",
         "kartik-v/yii2-widget-fileinput": "@stable",
         "kartik-v/yii2-number": "dev-master",
+        "seisvalt/change-log-behavior": "*",
         "wbraganca/yii2-dynamicform": "*",
+        "ogheo/yii2-comments": "*",
+        "yii2tech/authlog": "*",
         "yii2mod/yii2-comments": "*",
         "yii2mod/yii2-rbac": "*"
 
@@ -54,6 +57,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/seisvalt/change-log-behavior"
         }
     ]
 }
