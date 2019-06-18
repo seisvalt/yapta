@@ -20,6 +20,8 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ *
+ * @property UserProfile[] $userProfiles
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -185,5 +187,24 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getFullName()
+    {
+        return ucwords(strtolower($this->name . " " . $this->last_name));
+    }
+
+    public function delete()
+    {
+        $this->status = 0;
+        $this->save();
+    }
+
+    public function getUserProfiles()
+    {
+        return $this->hasMany(UserProfile::className(), ['user_id' => 'id']);
     }
 }

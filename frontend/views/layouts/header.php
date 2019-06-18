@@ -3,6 +3,9 @@ use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+$name_user = Yii::$app->user->identity->fullname;
+$user_name = Yii::$app->user->identity->username;
+$date_member =  Yii::$app->formatter->asDate (Yii::$app->user->identity->created_at);
 ?>
 
 <header class="main-header">
@@ -230,7 +233,7 @@ use yii\helpers\Html;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs"><?= $user_name?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -239,8 +242,8 @@ use yii\helpers\Html;
                                  alt="User Image"/>
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                <?= $user_name?> - Web Developer
+                                <small>Member since <?= $date_member ?></small>
                             </p>
                         </li>
                         <!-- Menu Body -->
