@@ -6,7 +6,7 @@
     <br>
 </p>
 
-YAPTA  es un esqueleto para el desarrollor de aplicaciónes realizadas en [Yii 2](http://www.yiiframework.com/) con metodologia agil y buenas practicas de programación.
+YAPTA  es un esqueleto para el desarrollo de aplicaciónes realizadas en [Yii 2](http://www.yiiframework.com/) con metodologia agil y buenas practicas de programación.
 YAPTA combina YII2 Advanced Template, la plantilla de AdminLTE, activa por defecto la seguridad basada en RBAC.
 
 
@@ -33,7 +33,16 @@ composer install
 ./init
 ```
 
-Realizar la configuración de la base de datos en common y en console para realizar corectamente las migraciones editando frontend/config/main-local.php y console/config/main-local.php
+Cambia el origen para que apunte a tu repositorio git
+
+```
+git remote rm origin
+git remote add origin git@github.com:turepo/tuproyecto.git
+git config master.remote origin
+git config master.merge refs/heads/master
+```
+
+Realizar la configuración de la base de datos en common y en console para realizar corectamente las migraciones editando common/config/main-local.php y console/config/main-local.php
 
 ```php
 'components' => [
@@ -51,9 +60,22 @@ Realizar la configuración de la base de datos en common y en console para reali
 ```
 ./yii migrate --migrationPath=@mdm/admin/migrations
 ./yii migrate --migrationPath=@yii/rbac/migrations
-./yii migrate --migrationPath=@vendor/yii2mod/yii2-comments/migrations
+./yii migrate/up --migrationPath=@vendor/ogheo/yii2-comments/src/migrations
+./yii migrate --migrationPath=@vendor/seisvalt/change-log-behavior/src/migrations
 ./yii migrate
 
+```
+
+Ejecuta la aplicación con el servidor web incorporado con el comando:
+
+```
+./yii serve --docroot='frontend/web'/
+```
+
+Credenciales
+```
+usuario: admin
+contraseña: password_0
 ```
 
 
@@ -100,3 +122,4 @@ environments/            contains environment-based overrides
 
 YAPTA open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)

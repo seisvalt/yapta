@@ -14,7 +14,7 @@ class m190117_123205_insert_useradmin extends Migration
     public function safeUp()
     {
         $auth_key = Yii::$app->security->generateRandomString();
-        $password =Yii::$app->security->generatePasswordHash('p4ssword_0');
+        $password =Yii::$app->security->generatePasswordHash('password_0');
         $this->insert('user', [
             'id' => 1,
             'username' => 'admin',
