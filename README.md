@@ -22,6 +22,7 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 ##### Requerimientos
 - PHP 7.1
+  - Habilitadas las extensiones iconv y gd en php.ini
 - MariaDB 10 ó Mysql 5.7
 
 Clone el repositorio.
