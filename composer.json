@@ -15,7 +15,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.1.0",
-        "yiisoft/yii2": "~2.0.24",
+        "yiisoft/yii2": "~2.0.27",
         "yiisoft/yii2-bootstrap": "~2.0.6",
         "yiisoft/yii2-swiftmailer": "~2.1.0",
         "dmstr/yii2-adminlte-asset": "^2.5",
@@ -36,16 +36,15 @@
         "wbraganca/yii2-dynamicform": "*",
         "ogheo/yii2-comments": "*",
         "yii2tech/authlog": "*",
-        "yii2mod/yii2-comments": "*",
         "yii2mod/yii2-rbac": "*"
 
     },
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.1.5",
-        "yiisoft/yii2-gii": "~2.1.0",
+        "yiisoft/yii2-debug": "~2.1.9",
+        "yiisoft/yii2-gii": "~2.1.1",
         "yiisoft/yii2-faker": "~2.0.4",
         "codeception/base": "^2.5.2",
-        "codeception/verify": "^1.0"
+        "codeception/verify": "^1.2"
     },
     "config": {
         "process-timeout": 1800,
