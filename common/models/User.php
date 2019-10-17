@@ -22,6 +22,7 @@ use yii\web\IdentityInterface;
  * @property string $password write-only password
  *
  * @property UserProfile[] $userProfiles
+ * @property UserProfile $profile
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -194,7 +195,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getFullName()
     {
-        return ucwords(strtolower($this->name . " " . $this->last_name));
+        return ucwords(strtolower($this->profile->name . " " . $this->profile->lastname));
     }
 
     public function delete()
@@ -206,5 +207,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function getUserProfiles()
     {
         return $this->hasMany(UserProfile::className(), ['user_id' => 'id']);
+    }
+
+    public function getProfile()
+    {
+        return $this->hasOne(UserProfile::className(), ['user_id' => 'id']);
     }
 }
