@@ -3,40 +3,31 @@
 
 ?>
 
-<aside class="main-sidebar">
-
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link">
+        <img src="dist/img/AdminLTELogo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light"><?= Yii::$app->name ?></span>
+    </a>
     <section class="sidebar">
-
         <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="<?= Yii::$app->user->identity->profile->customThumbnail; ?>" class="img-circle" alt="User Image"/>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="<?= Yii::$app->user->identity->profile->customThumbnail; ?>" class="img-circle elevation-2" alt="User Image">
             </div>
-            <div class="pull-left info">
-                <p><?= Yii::$app->user->identity->fullname ?> </p>
-
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <div class="info">
+                <a href="#" class="d-block"><?= Yii::$app->user->identity->fullname ?></a>
             </div>
         </div>
 
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
-        <?= dmstr\widgets\Menu::widget(
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <?= seisvalt\widgets\Menu::widget(
             [
-                'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
+                'options' => ['class' => 'nav nav-pills nav-sidebar flex-column', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
+                    ['label' => 'Gii', 'icon' => 'tachometer-alt', 'url' => ['/gii'], 'options' => ['class' => 'nav-item'], 'class' => 'moco'],
+                    ['label' => 'Site', 'icon' => 'tachometer-alt', 'url' => ['/site/index'], 'options' => ['class' => 'nav-item']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
@@ -68,6 +59,7 @@
                 ],
             ]
         ) ?>
+        </nav>
 
     </section>
 

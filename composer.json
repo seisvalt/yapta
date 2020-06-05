@@ -16,9 +16,8 @@
     "require": {
         "php": ">=7.1.0",
         "yiisoft/yii2": "~2.0.35",
-        "yiisoft/yii2-bootstrap": "~2.0.10",
+        "yiisoft/yii2-bootstrap4": "@dev",
         "yiisoft/yii2-swiftmailer": "~2.1.2",
-        "dmstr/yii2-adminlte-asset": "^2.6.2",
         "kartik-v/yii2-widget-select2": "dev-master",
         "kartik-v/yii2-grid": "dev-master",
         "kartik-v/yii2-mpdf": "*",
@@ -32,8 +31,10 @@
         "kartik-v/yii2-field-range": "*",
         "kartik-v/yii2-widget-fileinput": "@stable",
         "kartik-v/yii2-number": "dev-master",
+        "seisvalt/yii2-adminlte-asset": "*",
         "seisvalt/change-log-behavior": "*",
         "wbraganca/yii2-dynamicform": "*",
+        "bower-asset/fontawesome": "~5",
         "ogheo/yii2-comments": "*",
         "yii2tech/authlog": "*",
         "yii2mod/yii2-rbac": "*"
@@ -60,6 +61,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/seisvalt/change-log-behavior"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/seisvalt/yii2-adminlte-asset"
         }
     ]
 }
