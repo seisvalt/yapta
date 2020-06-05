@@ -1,4 +1,6 @@
 <?php
+/* @var $content string */
+
 use yii\widgets\Breadcrumbs;
 use dmstr\widgets\Alert;
 

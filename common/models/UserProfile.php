@@ -58,6 +58,10 @@ class UserProfile extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getCustomThumbnail(){
+        return  Yii::getAlias('@web') . ($this->thumbnail ?? "\img\user.png");
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
